@@ -21,18 +21,27 @@ async def main():
             print("Input schema:")
             print(json.dumps(tool.input_schema, indent=2))
             
-        # 3. Execute our DevOps tool
         result = await client.call_tool(
-            "get_pipeline_status",
-            {"wrong_parameter": "backend-deploy"}
+            "list_pipeline_runs",
+            {"status": "failed"}
         )
-        
-        print("\nTool result:")
+
         print("Is error:", result.is_error)
+        print("Structured content:", result.structured_content)
+        print("Run-ID: ", result.structured_content["runs"][0]["run_id"])
+            
+        # 3. Execute our DevOps tool
+        #result = await client.call_tool(
+        #    "get_pipeline_status",
+        #    {"wrong_parameter": "backend-deploy"}
+        #)
         
-        for block in result.content:
-            if block.type == "text":
-                print(block.text)
+        #print("\nTool result:")
+        #print("Is error:", result.is_error)
+        
+        #for block in result.content:
+        #    if block.type == "text":
+        #        print(block.text)
                 
                 
 asyncio.run(main())

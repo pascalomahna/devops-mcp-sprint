@@ -1,0 +1,24 @@
+
+[
+  {
+    "run_id": 101,
+    "pipeline": "backend-deploy",
+    "status": "failed",
+    "duration_seconds": 82,
+    "log": "Starting deployment...\nConnecting to cluster...\nERROR: ImagePullBackOff\nDeployment failed."
+  },
+  {
+    "run_id": 102,
+    "pipeline": "frontend-test",
+    "status": "succeeded",
+    "duration_seconds": 135,
+    "log": "Installing dependencies...\nRunning tests...\n42 tests passed.\nBuild successful."
+  },
+  {
+    "run_id": 103,
+    "pipeline": "backend-deploy",
+    "status": "running",
+    "duration_seconds": null,
+    "log": "Starting deployment...\nBuilding container image..."
+  }
+]
