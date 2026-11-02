@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "devopsLearning": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/pascal/projects/devops-mcp-sprint",
+        "run",
+        "mcp",
+        "run",
+        "server.py"
+      ]
+    }
+  }
+}
